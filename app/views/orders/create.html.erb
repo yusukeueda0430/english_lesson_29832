@@ -1,0 +1,29 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+  </header>
+
+  <div class="items-sell-main">
+    <div class="items-sell-title">
+      レッスンで使うzoomのURL
+    </div>
+    <div class="items-sell-title1">
+      <%= @lesson.zoom_url %>
+    </div>
+    <div class="sell-btn-contents">
+      <%=link_to 'トップ画面にもどる', root_path, class:"to-top-btn" %>
+    </div>
+  </div>
+
+  <footer class="items-sell-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">LAUNGUAGE_LESSON利用規約</a></li>
+      <li><a href="#">特定商取引に関する表記</a></li>
+    </ul>
+    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+    <p class="inc">
+      ©︎LAUNGUAGE_LESSON,Inc.
+    </p>
+  </footer>
+</div>
