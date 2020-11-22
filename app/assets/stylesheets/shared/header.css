@@ -98,7 +98,13 @@
   color: #333333;
 }
 
-.sign-up {
+.sign-up-right {
   text-decoration: none;
   color: #333333;
+}
+
+.sign-up-left {
+  text-decoration: none;
+  color: #333333;
+  margin-right: 3vw;
 }

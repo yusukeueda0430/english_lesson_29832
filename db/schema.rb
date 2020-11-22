@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_11_21_130634) do
     t.integer "end_time_id", null: false
     t.text "zoom_url", null: false
     t.integer "price", null: false
-    t.integer "user_id", null: false
+    t.integer "teacher_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

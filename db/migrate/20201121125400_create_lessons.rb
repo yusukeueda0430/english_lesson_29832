@@ -13,7 +13,7 @@ class CreateLessons < ActiveRecord::Migration[6.0]
       t.integer :end_time_id,                   null: false
       t.text    :zoom_url,                      null: false
       t.integer :price,                         null: false
-      t.integer :user_id,                       null: false, foreign_key: true
+      t.integer :teacher_id,                       null: false, foreign_key: true
       t.timestamps
     end
   end

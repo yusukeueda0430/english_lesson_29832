@@ -1,18 +1,32 @@
 # frozen_string_literal: true
 
 class Students::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, only: [:create]
+  #before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
-  GET /resource/sign_up
   def new
+    @student = Student.new
+  end
+
+  def create
+    @student = Student.new(configure_permitted_parameters)
     super
   end
 
-  POST /resource
-  def create
-    super
+  protected
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :first_name, :first_hurigana, :last_name, :last_hurigana, :birthday, :phone_number])
   end
+
+  # GET /resource/sign_up
+  # def new
+  #   super
+  # end
+
+  # POST /resource
+  # def create
+  #   super
+  # end
 
   # GET /resource/edit
   # def edit
@@ -40,10 +54,10 @@ class Students::RegistrationsController < Devise::RegistrationsController
 
   # protected
 
-  If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  end
+  # If you have extra params to permit, append them to the sanitizer.
+  # def configure_sign_up_params
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  # end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params

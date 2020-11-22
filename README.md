@@ -242,7 +242,7 @@ Things you may want to cover:
 ## Association
 
 - has_one    :order
-- belongs_to :user
+- belongs_to :teacher
 
 ## orders テーブル
 
@@ -253,8 +253,8 @@ Things you may want to cover:
 
 ### Association
 
-- has_one    :user_details
-- belongs_to :user
+- has_one    :student_details
+- belongs_to :student
 - belongs_to :lesson
 
 ## user_details テーブル

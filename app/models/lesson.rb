@@ -8,7 +8,7 @@ class Lesson < ApplicationRecord
   belongs_to_active_hash :end_time
 
   has_one    :order
-  belongs_to :user
+  belongs_to :teacher
   has_one_attached :image
 
   with_options numericality: { other_than: 1 }, presence:true do
