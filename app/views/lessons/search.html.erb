@@ -1,0 +1,35 @@
+<%= render "shared/header" %>
+
+<div class='search-contents'>
+    <h2 class='title'>検索結果</h2>
+    <ul class='lesson-lists'>
+     <% @lesson.each do |lesson| %>
+      <li class='list'>
+        <%= link_to lesson_path(lesson.id) do %>
+        <div class='lesson-img-content'>
+          <%= image_tag lesson.image, class: "lesson-img" %>
+          <% if lesson.order %> 
+            <div class='sold-out'>
+              <span>Sold Out!!</span>
+            </div>
+          <% end %>
+        </div>
+        <div class='lesson-info'>
+          <h3 class='lesson-name'>
+            <%= lesson.name %>
+          </h3>
+          <div class='lesson-price'>
+            <span><%= lesson.price %>円<br>(税込み)</span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+     <% end %>
+    </ul>
+</div>
+
+<%= render "shared/footer" %>

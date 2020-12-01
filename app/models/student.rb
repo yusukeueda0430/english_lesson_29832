@@ -4,6 +4,7 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          has_many :orders
+         has_many :student_comments
 
          name = /\A[ぁ-んァ-ン一-龥]/
          hurigana = /\A[ァ-ヶー－]+\z/
@@ -12,7 +13,7 @@ class Student < ApplicationRecord
 
          with_options presence:true do
          validates :password, format: { with: password , message: "英数字混合でお願いします" }
-         validates :nickname
+         validates :nickname, length: { maximum: 40 }
          validates :first_name, format: { with: name , message: "漢字、ひらがな、カタカナでお願いします" }
          validates :first_hurigana, format: { with: hurigana , message: "カタカナでお願いします"}
          validates :last_name, format: { with: name , message: "漢字、ひらがな、カタカナでお願いします" }

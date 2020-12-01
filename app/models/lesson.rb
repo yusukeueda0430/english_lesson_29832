@@ -9,7 +9,17 @@ class Lesson < ApplicationRecord
 
   has_one    :order
   belongs_to :teacher
+  has_many   :student_comments
+  has_many   :teacher_comments
   has_one_attached :image
+
+  def self.search(search)
+    if search != ""
+      Lesson.where('name LIKE(?)', "%#{search}%")
+    else
+      Lesson.all
+    end
+  end
 
   with_options numericality: { other_than: 1 }, presence:true do
    validates :category_id
@@ -21,12 +31,12 @@ class Lesson < ApplicationRecord
   end
 
   with_options presence:true do
-   validates :name
-   validates :details
+   validates :name, length: { maximum: 40 }
+   validates :details, length: { maximum: 1000 }
    validates :price, numericality: {greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message:'は半角数字、また300~999999円でお願いします' }
-   validates :living_place
-   validates :what_day
-   validates :zoom_url
+   validates :living_place, length: { maximum: 30 }
+   validates :what_day, length: { maximum: 30 }
+   validates :zoom_url, length: { maximum: 200 }
   end
 
   validate :image_presence

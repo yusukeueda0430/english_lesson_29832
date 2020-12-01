@@ -3,16 +3,16 @@ a {
 }
 
 .main {
-  background: #f8f8f8;
+  background: #FFF	;
 }
 
-/* 画面上部の「人生を変えるフリマアプリ」帯部分 */
+/* 画面上部の「人生を豊かにする英語レッスン」帯部分 */
 .title-contents {
   width: 100vw;
-  background-image: image-url('furima-header01.png');
+  background-image: image-url('lesson-header01.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center center;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -45,9 +45,9 @@ a {
   height: 9vh;
 }
 
-/* //画面上部の「人生を変えるフリマアプリ」帯部分 */
+/* //画面上部の「人生を豊かにする英語レッスン」帯部分 */
 
-/* FURIMAが選ばれる3つの理由部分 */
+/* english_lessonが選ばれる3つの理由部分 */
 .select-reason-contents {
   padding: 5vh 15vw;
 }
@@ -64,7 +64,7 @@ a {
   content: '';
   width: 70px;
   height: 4px;
-  background-color: #3ccace;
+  background-color:#FF4F02;
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -99,7 +99,7 @@ a {
   font-size: 30px;
   text-align: center;
   line-height: 60px;
-  background-color: #3ccace;
+  background-color:#FF4F02;
   color: #fff;
 }
 
@@ -110,7 +110,7 @@ a {
 }
 
 .reason-list-blue-text {
-  color: #3ccace;
+  color:#FF4F02;
 }
 
 .reason-list-description {
@@ -118,16 +118,16 @@ a {
   margin-top: 20px;
 }
 
-/* //FURIMAが選ばれる3つの理由部分 */
+/* //english_lessonが選ばれる3つの理由部分 */
 
 
 /* 画面中央の「会員数日本一位」帯部分*/
 .ad-contents {
   width: 100vw;
-  background-image: image-url('furima-header02.png');
+  background-image: image-url('lesson-header02.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center center;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -163,99 +163,41 @@ a {
 
 /* //画面中央の「会員数日本一位」帯部分 */
 
-/* FURIMAの特徴 */
-.feature-contents {
-  padding: 5vh 15vw;
-}
+/* レッスン一覧 */
 
-.feature-contents>.title {
-  text-align: center;
-  font-size: 3.5vh;
-  font-weight: bold;
-  margin-bottom: 5vh;
-  position: relative;
-}
-
-.feature-contents>.title::after {
-  content: '';
-  width: 70px;
-  height: 4px;
-  background-color: #3ccace;
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.feature-lists {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.feature-lists>.list {
-  width: 33vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.feature-list-text {
-  font-weight: bold;
-  font-size: 22px;
-  line-height: 50px;
-}
-
-.feature-list-description {
-  font-size: 18px;
-  margin-top: 20px;
-}
-
-/* //FURIMAの特徴 */
-
-/* 商品一覧 */
-
-.item-contents {
-  background-color: #FFF;
+.lesson-contents {
+  background-color:#FFF;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10vh 0;
 }
 
-.item-contents>.title {
+.lesson-contents>.title {
   font-size: 5vh;
   line-height: 1.4;
   font-weight: bold;
 }
 
-.item-contents>.subtitle {
-  font-size: 3vh;
-  margin: 1vh 0;
-  text-decoration: none;
-  color: #3ccace;
-  font-weight: bold;
-}
-
-.item-lists {
+.lesson-lists {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.item-lists>.list {
+.lesson-lists>.list {
   width: 37vh;
   padding: 1vw;
-  background-color: #FFF;
+  background-color:#FFF;
 }
 
 
-.item-img-content {
+.lesson-img-content {
   position: relative;
 }
 
-.item-img {
+.lesson-img {
   width: 33vh;
   height: 33vh;
 }
@@ -265,7 +207,7 @@ a {
   top: 40%;
   width: 100%;
   text-align: center;
-  background-color: crimson;
+  background-color:#FF4F02;
   transform: skewY(-10deg);
 }
 
@@ -276,17 +218,17 @@ a {
 }
 
 
-.item-info {
-  background-color: #FFF;
+.lesson-info {
+  background-color:#FFF;
   color: black;
   padding: 1vw;
 }
 
-.item-name {
+.lesson-name {
   font-size: 2.5vh;
 }
 
-.item-price {
+.lesson-price {
   font-size: 1.5vh;
   display: flex;
   justify-content: space-between;
@@ -308,4 +250,5 @@ a {
   font-size: 2vh;
 }
 
-/* //商品一覧 */
+
+/* //レッスン一覧 */

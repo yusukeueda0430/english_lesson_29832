@@ -1,5 +1,5 @@
 /* 下部広告部分 */
-/* items/index.htmlの広告cssを所々使いまわしています。 */
+/* lessons/index.htmlの広告cssを所々使いまわしています。 */
 
 .ad-footer-contents {
   width: 100vw;
@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
   padding: 5vh 15vw;
-  color: #fff;
+  color: #FFF;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
@@ -32,7 +32,7 @@
   width: 100vw;
   padding: 5vh 0;
   color: #FFF;
-  background-color: #272727;
+  background-color:#EEEEEE;
   text-align: center;
 }
 
@@ -42,7 +42,7 @@
   margin-bottom: 5vh;
 }
 
-.furima-details {
+.english-lesson-details {
   margin: 0 4vw;
 }
 
@@ -50,10 +50,11 @@
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
+  color:#000000;
 }
 
 .footer-link {
-  color: #FFF;
+  color: #000000;
   font-size: 12px;
   line-height: 30px;
 }
@@ -65,4 +66,5 @@
 
 .footer>p {
   font-size: 14px;
+  color:#000000;
 }

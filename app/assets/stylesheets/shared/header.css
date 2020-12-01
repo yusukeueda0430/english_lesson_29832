@@ -7,6 +7,7 @@
   padding: 2vh 15vw;
   display: flex;
   flex-direction: column;
+  background-color:#FFFFFF;
 }
 
 .search-bar-contents {
@@ -15,7 +16,7 @@
   align-items: center;
 }
 
-.furima-icon {
+.lesson-icon {
   width: 10vw;
   margin-right: 10vw;
 }
@@ -27,7 +28,7 @@
   margin-bottom: 5px;
 }
 
-.search-form>.input-box {
+.search-form>.search-input {
   width: 100%;
   height: 5vh;
   padding-left: 10px;
@@ -37,7 +38,7 @@
   width: 5vh;
   border: 0;
   cursor: pointer;
-  background-color: #3ccace;
+  background-color:#FF4F02;
   padding: 8px;
 }
 
@@ -56,27 +57,60 @@
 
 .lists-left {
   display: flex;
-  min-width: 200px;
+  min-width: 100px;
+  height: 40px;
+  }
 
-}
+.lists-left li, .lists-right li{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  }
 
-.category-list {
-  text-decoration: none;
-  margin-right: 3vw;
+.lists-left li a, .lists-right li a{
+  display: block;
   color: #333333;
-}
-
-.brand-list {
+  font-size: 14px;
   text-decoration: none;
+  }
+
+.lists-left li:hover > a, .lists-right li:hover > a{
+  background: #fff;
   color: #333333;
-}
+  }
+
+.lists-left li ul, .lists-right li ul{
+  position: absolute;
+  top: 100%;
+  }
+
+.lists-left li ul li, .lists-right li ul li{
+  overflow: hidden;
+  width: 200%;
+  height: 0;
+  color: #fff;
+  }
+
+.lists-left li ul li a, .lists-right li ul li a{
+  padding: 13px 15px;
+  background: #fff;
+  text-align: left;
+  font-size: 12px;
+  font-weight: normal;
+  }
+
+.lists-left li:hover ul li, .lists-right li:hover ul li{
+  overflow: visible;
+  height: 38px;
+  }
 
 .lists-right {
   display: flex;
-  list-style: none;
-  align-items: flex-end;
+  min-width: 200px;
+  list-style-type: none;
+  height: 40px;
+  border-radius: 3px 3px 0 0;
 }
-
 
 .user-nickname {
   text-decoration: none;
@@ -85,26 +119,7 @@
   font-weight: bold;
 }
 
-
 .logout {
   text-decoration: none;
   color: #333333;
-}
-
-.login {
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  color: #333333;
-}
-
-.sign-up-right {
-  text-decoration: none;
-  color: #333333;
-}
-
-.sign-up-left {
-  text-decoration: none;
-  color: #333333;
-  margin-right: 3vw;
 }

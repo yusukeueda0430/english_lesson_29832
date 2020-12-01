@@ -20,7 +20,7 @@
 }
 
 /* 購入内容の表示 */
-.buy-item-info {
+.buy-lesson-info {
   height: 150px;
   border-bottom: 2px solid #f5f5f5;
   display: flex;
@@ -28,41 +28,41 @@
   justify-content: center;
 }
 
-.buy-item-img {
+.buy-lesson-img {
   margin-right: 20px;
   height: 130px;
   width: 250px;
   object-fit: contain;
 }
 
-.buy-item-right-content {
+.buy-lesson-right-content {
   display: flex;
   flex-direction: column;
 }
 
-.buy-item-text {
+.buy-lesson-text {
   font-size: 20px;
 }
 
-.buy-item-price {
+.buy-lesson-price {
   display: flex;
   font-weight: bold;
   align-items: center;
   margin-top: 10px;
 }
 
-.item-price-text {
+.lesson-price-text {
   font-size: 15px;
 }
 
-.item-price-sub-text {
+.lesson-price-sub-text {
   font-size: 12px;
 }
 
 /* /購入内容の表示 */
 
 /* 支払額の表示 */
-.item-payment {
+.lesson-payment {
   height: 120px;
   display: flex;
   justify-content: space-around;
@@ -71,11 +71,11 @@
   font-weight: bold;
 }
 
-.item-payment-title {
+.lesson-payment-title {
   font-size: 20px;
 }
 
-.item-payment-price {
+.lesson-payment-price {
   font-size: 25px;
 }
 
@@ -126,8 +126,8 @@
 
 /* /カード情報の入力 */
 
-/* 配送先の入力 */
-.shipping-address-form {
+/* 回答の入力 */
+.shipping-questionnaire-form {
   margin-top: 15px;
 }
 
@@ -154,3 +154,4 @@
   font-size: 14px;
   cursor: pointer;
 }
+/* 回答の入力 */
