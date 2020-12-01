@@ -22,7 +22,7 @@
     <ul class='lists-right'>
       <% if teacher_signed_in? %>
        <li><%= link_to current_teacher.nickname, "#", class: "user-nickname" %></li>
-       <li><%= link_to 'ログアウト', sign_out_path, class: "logout" %></li>
+       <li><%= link_to 'ログアウト', teacher_registration_path, method: :delete, class: "logout" %></li>
       <% elsif student_signed_in? %>
        <li><%= link_to current_student.nickname, "#", class: "user-nickname" %></li>
        <li><%= link_to 'ログアウト', student_registration_path, method: :delete, class: "logout" %></li>
