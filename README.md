@@ -109,6 +109,7 @@ Things you may want to cover:
 【表示】
 
 生徒のアカウントでログインしていると、「出品画像、レッスン名、料金」の表示、クレジットカード情報や回答を入力するフォームがある
+購入すると、zoomのURLが表示される
 
 ## レッスン削除機能
 
@@ -153,6 +154,8 @@ Things you may want to cover:
   ## レッスン購入機能
 
   生徒がログインしていると、クレジットカードの情報を入力することで、好きなレッスンを購入できる
+  
+  購入すると、zoomのURLが表示される
 
   ## レッスン削除機能
 
@@ -203,6 +206,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :orders
+- has_many :student_comments
 
 ## teachers テーブル
 
@@ -221,6 +225,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :lessons
+- has_many :teacher_comments
 
 ## lessons テーブル
 
@@ -243,13 +248,15 @@ Things you may want to cover:
 
 - has_one    :order
 - belongs_to :teacher
+- has_many   :student_comments
+- has_many   :teacher_comments
 
 ## orders テーブル
 
-| Column    | Type    | Options                        |
-| --------- | ------- | ------------------------------ |
-| user_id   | integer | null: false, foreign_key: true |
-| lesson_id | integer | null: false, foreign_key: true |
+| Column     | Type    | Options                        |
+| ---------- | ------- | ------------------------------ |
+| student_id | integer | null: false, foreign_key: true |
+| lesson_id  | integer | null: false, foreign_key: true |
 
 ### Association
 
@@ -257,7 +264,7 @@ Things you may want to cover:
 - belongs_to :student
 - belongs_to :lesson
 
-## user_details テーブル
+## student_details テーブル
 
 | Column                        | Type    | Options                        |
 | ----------------------------- | ------- | ------------------------------ |
@@ -268,6 +275,32 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :order
+
+## student_comments テーブル
+
+| Column     | Type    | Options                        |
+| ---------- | ------- | ------------------------------ |
+| text       | text    | null: false                    |
+| student_id | integer | null: false, foreign_key: true |
+| lesson_id  | integer | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :student
+- belongs_to :lesson
+
+## teacher_comments テーブル
+
+| Column     | Type    | Options                        |
+| -----------| ------- | ------------------------------ |
+| text       | text    | null: false                    |
+| teacher_id | integer | null: false, foreign_key: true |
+| lesson_id  | integer | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :teacher
+- belongs_to :lesson
 
 # ローカルでの動作方法
 

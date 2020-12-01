@@ -1,12 +1,9 @@
-<%# cssは商品出品のものを併用しています。
-app/assets/stylesheets/items/new.css %>
-
-<div class="items-sell-contents">
-  <header class="items-sell-header">
-    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+<div class="lessons-sell-contents">
+  <header class="lessons-sell-header">
+    <%= link_to image_tag('lesson-logo.png' , size: '185x50'), "/" %>
   </header>
-  <div class="items-sell-main">
-    <h2 class="items-sell-title">商品の情報を入力</h2>
+  <div class="lessons-sell-main">
+    <h2 class="lesson-sell-title">レッスンの情報を入力</h2>
     <%= form_with model: @lesson, url: lesson_path, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -21,41 +18,41 @@ app/assets/stylesheets/items/new.css %>
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image, id:"lesson-image" %>
       </div>
     </div>
     <%# /レッスン画像 %>
     <%# レッスン名とレッスンの説明 %>
-    <div class="new-items">
+    <div class="new-lessons">
       <div class="weight-bold-text">
         レッスン名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"レッスン名（必須 40文字まで)", maxlength:"40" %>
-      <div class="items-explain">
+      <%= f.text_area :name, class:"lessons-text", id:"lesson-name", placeholder:"レッスン名（必須 40文字まで)" %>
+      <div class="lessons-explain">
         <div class="weight-bold-text">
           レッスンの説明
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :details, class:"items-text", id:"item-info", placeholder:"レッスンの説明（必須 1000文字まで)" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :details, class:"lessons-text", id:"lesson-info", placeholder:"レッスンの説明（必須 1000文字まで)" ,rows:"7" %>
       </div>
     </div>
     <%# /レッスン名とレッスンの説明 %>
 
     <%# レッスンの詳細 %>
-    <div class="items-detail">
+    <div class="lessons-detail">
       <div class="weight-bold-text">レッスンの詳細</div>
       <div class="form">
         <div class="weight-bold-text">
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"category_id"}) %>
         <div class="weight-bold-text">
           居住地
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :living_place, class:"items-text", id:"living-place", placeholder:"居住地（必須 30文字まで)", maxlength:"30" %>
+        <%= f.text_area :living_place, class:"lessons-text", id:"living-place", placeholder:"居住地（必須 30文字まで)" %>
         <div class="weight-bold-text">
           留学経験
           <span class="indispensable">必須</span>
@@ -75,7 +72,7 @@ app/assets/stylesheets/items/new.css %>
           レッスンを実施する曜日
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :what_day, class:"items-text", id:"what-day", placeholder:"曜日（必須 30文字まで)", maxlength:"30" %>
+        <%= f.text_area :what_day, class:"lessons-text", id:"what-day", placeholder:"曜日（必須 30文字まで)" %>
         <div class="weight-bold-text">
           開始時間
           <span class="indispensable">必須</span>
@@ -90,7 +87,7 @@ app/assets/stylesheets/items/new.css %>
           zoomのURL
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :zoom_url, class:"items-text", id:"zoom_url", placeholder:"https://zoom.us/j/〜のようにzoomのURLを入力してください（必須 1000文字まで)", maxlength:"1000" %>
+        <%= f.text_area :zoom_url, class:"lessons-text", id:"zoom_url", placeholder:"https://zoom.us/j/〜のようにzoomのURLを入力してください（必須 200文字まで)" %>
       </div>
     </div>
     <%# /レッスンの詳細 %>
@@ -108,7 +105,7 @@ app/assets/stylesheets/items/new.css %>
             <span class="indispensable">必須</span>
           </div>
           <span class="sell-yen">¥</span>
-          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
+          <%= f.text_field :price, class:"price-input", id:"lesson-price", placeholder:"例）300" %>
         </div>
         <div class="price-content">
           <span>販売手数料 (10%)</span>
@@ -149,15 +146,15 @@ app/assets/stylesheets/items/new.css %>
     <% end %>
   </div>
 
-  <footer class="items-sell-footer">
+  <footer class="lessons-sell-footer">
     <ul class="menu">
       <li><a href="#">プライバシーポリシー</a></li>
-      <li><a href="#">LAUNGUAGE_LESSON利用規約</a></li>
+      <li><a href="#">ENGLISH_LESSON利用規約</a></li>
       <li><a href="#">特定商取引に関する表記</a></li>
     </ul>
-    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+    <%= link_to image_tag('lesson-logo.png' , size: '185x50'), "/" %>
     <p class="inc">
-      ©︎LAUNGUAGE_LESSON,Inc.
+      ©︎ENGLISH_LESSON,Inc.
     </p>
   </footer>
 </div>

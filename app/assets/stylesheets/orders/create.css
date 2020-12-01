@@ -1,7 +1,7 @@
 /* border-bottom: 1px solid #eee; */
 
 
-.items-sell-contents {
+.lessons-sell-contents {
   background-color: #f5f5f5;
   font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
   font-size: 14px;
@@ -11,26 +11,26 @@
   min-width: 500px;
 }
 
-.items-sell-header {
+.lessons-sell-header {
   padding: 5vh 0;
   text-align: center;
 }
 
-.items-sell-main {
+.lessons-sell-main {
   background-color: #FFF;
   width: 70vw;
   min-width: 450px;
   padding: 10vh 15vw;
 }
 
-.items-sell-title {
+.lessons-sell-title {
   font-size: 22px;
   font-weight: bold;
   text-align: center;
-  padding:0 0 20px 0;
+  padding: 0 0 20px 0; 
 }
 
-.items-sell-title1 {
+.lessons-zoom-url {
   font-size: 22px;
   font-weight: bold;
   text-align: center;
@@ -44,7 +44,7 @@
 }
 
 .to-top-btn {
-  background: #ea352d;
+  background:#ea352d;
   border: 1px solid #ea352d;
   color: #fff;
   padding: 15px 35%;
@@ -53,7 +53,7 @@
 
 /* /下部ボタン */
 
-.items-sell-footer {
+.lessons-sell-footer {
   background-color: #f5f5f5;
   width: 60vw;
   padding: 3ch 0;
@@ -63,7 +63,7 @@
 }
 
 
-.items-sell-footer>.menu {
+.lessons-sell-footer>.menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
