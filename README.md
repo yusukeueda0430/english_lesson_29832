@@ -36,10 +36,13 @@ Things you may want to cover:
 
 
 # URL
+https://english-lesson-29832.herokuapp.com/
 
 
 # テスト用アカウント
+講師アカウント
 
+生徒アカウント
 
 # 利用方法
 
