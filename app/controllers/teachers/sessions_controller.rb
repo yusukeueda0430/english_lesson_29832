@@ -4,15 +4,16 @@ class Teachers::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
   def new
-     super
+   
+   super
   end
 
   def create
-     super
+   super
   end
 
   def destroy
-     super
+   super
   end
 
   # protected
