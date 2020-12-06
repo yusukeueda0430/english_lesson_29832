@@ -101,6 +101,7 @@ https://english-lesson-29832.herokuapp.com/
 
 誰でも、レッスン画像、レッスン名、料金、レッスン詳細説明文、カテゴリ、レッスンの回数と曜日と開始時間、終了時間、講師のプロフィールを見ることができる
 生徒(誰でも)と出品した講師の場合、コメントを書くことができる
+売れたレッスンを出品した講師が見ると、購入した生徒の詳細を見ることができる
   
 ## レッスン編集機能
 
@@ -158,11 +159,13 @@ https://english-lesson-29832.herokuapp.com/
 
   ## レッスン詳細機能
 
-  詳細については誰でも見ることができる
+  レッスンの詳細と講師のプロフィールについては誰でも見ることができる
 
   講師がログインしていれば、編集ページに進んだり、削除したり、コメントしたりできる
 
   生徒がログインしていれば、購入ページに進んだり、コメントしたりできる
+
+  売れたレッスンを出品した講師が見ると、購入した生徒の詳細を見ることができる
 
   ## レッスン編集機能
 
@@ -274,7 +277,7 @@ https://english-lesson-29832.herokuapp.com/
 | start_time_id      | integer | null:false                  |
 | end_time_id        | integer | null:false                  |
 | price              | integer | null:false                  |
-| user_id            | integer | null:false foreign_key:true |
+| teacher_id         | integer | null:false foreign_key:true |
 
 ## Association
 
@@ -292,17 +295,19 @@ https://english-lesson-29832.herokuapp.com/
 
 ### Association
 
-- has_one    :student_details
+- has_one    :student_detail
 - belongs_to :student
 - belongs_to :lesson
 
 ## student_details テーブル
 
-| Column                | Type    | Options                      |
-| --------------------- | ------- | ---------------------------- |
-| ryugaku_experience_id | integer | null: false                  |
-| english_test_id       | integer | null: false                  |
-| order_id              | integer | null: false,foreign_key:true |
+| Column                        | Type    | Options                      |
+| ----------------------------- | ------- | ---------------------------- |
+| ryugaku_experience_id         | integer | null: false                  |
+| english_test_id               | integer | null: false                  |
+| living_place                  | string  | null: false                  |
+| overseas_residence_history_id | integer | null: false                  |
+| order_id                      | integer | null: false,foreign_key:true |
 
 ### Association
 

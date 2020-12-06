@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 2020_11_24_125748) do
   create_table "student_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "ryugaku_experience_id", null: false
     t.integer "english_test_id", null: false
+    t.string "living_place", null: false
+    t.integer "overseas_residence_history_id", null: false
     t.integer "order_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

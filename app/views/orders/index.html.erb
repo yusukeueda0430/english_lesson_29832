@@ -82,6 +82,13 @@
       </h1>
       <div class="form-group">
         <div class='form-text-wrap'>
+          <label class="form-text">居住地</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :living_place, class:"input-default", id:"living-place", placeholder:"居住地（必須 30文字まで)" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
           <label class="form-text">留学経験</label>
           <span class="indispensable">必須</span>
         </div>
@@ -94,6 +101,14 @@
         </div>
         <%= f.collection_select(:english_test_id, EnglishTest.all, :id, :name, {}, {class:"select-box", id:"english_test_id"}) %>
       </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">海外在住歴</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:overseas_residence_history_id, OverseasResidenceHistory.all, :id, :name, {}, {class:"select-box", id:"overseas-residence-history-id"}) %>
+      </div>
+
     </div>
     <%# /回答の入力 %>
     <div class='buy-btn'>

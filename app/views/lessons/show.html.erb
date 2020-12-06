@@ -23,16 +23,15 @@
       </span>
     </div>
 
-    <% if teacher_signed_in? && current_teacher.id == @lesson.teacher_id %>
-      <%= link_to 'レッスンの編集', edit_lesson_path(@lesson.id), method: :get, class: "lesson-red-btn" %>
-      <p class='or-text'>or</p>
-      <%= link_to '削除', lesson_path(@lesson.id), method: :delete, class:'lesson-destroy' %>
-    <% end %>
+    <%# <% if teacher_signed_in? && current_teacher.id == @lesson.teacher_id %>
+      <%# <%= link_to 'レッスンの編集', edit_lesson_path(@lesson.id), method: :get, class: "lesson-red-btn" %>
+      <%# <p class='or-text'>or</p>  %>
+      <%# <%= link_to '削除', lesson_path(@lesson.id), method: :delete, class:'lesson-destroy' %>
+    <%# <% end %>
 
-    <% if student_signed_in? && @lesson.order == nil %>
-      <%= link_to '購入画面に進む', lesson_orders_path(@lesson.id) ,class:"lesson-red-btn"%>
-    <% end %>
-
+    <%# <% if student_signed_in? && @lesson.order == nil %>
+      <%# <%= link_to '購入画面に進む', lesson_orders_path(@lesson.id) ,class:"lesson-red-btn"%>
+    <%# <% end %>
     <div class="lesson-explain-box">
       <h2 class="detail">
         レッスン詳細説明文
@@ -68,33 +67,75 @@
           </tr>
         </tbody>
     </table>
-    <table class="detail-table-teacher">
-      <h2 class="profile">
-        講師のプロフィール
-      </h2>
-      <tbody>
-        <tr>
-          <th class="teacher-detail">ニックネーム</th>
-          <td class="detail-value"><%= @lesson.teacher.nickname %></td>
-        </tr>
-        <tr>
-          <th class="teacher-detail">居住地</th>
-          <td class="detail-value"><%= @lesson.teacher.living_place %></td>
-        </tr>
-        <tr>
-          <th class="teacher-detail">留学経験</th>
-          <td class="detail-value"><%= @lesson.teacher.ryugaku_experience.name %></td>
-        </tr>
-        <tr>
-          <th class="teacher-detail">海外在住歴</th>
-          <td class="detail-value"><%= @lesson.teacher.overseas_residence_history.name %></td>
-        </tr>
-        <tr>
-          <th class="teacher-detail">TOEICやILETSの点数</th>
-          <td class="detail-value"><%= @lesson.teacher.english_test.name %></td>
-        </tr>
-      </tbody>
-    </table>
+    <% if student_signed_in? %>
+      <table class="detail-table-teacher">
+        <h2 class="profile">
+          講師のプロフィール
+        </h2>
+        <tbody>
+          <tr>
+            <th class="detail-teacher">ニックネーム</th>
+            <td class="detail-value"><%= @lesson.teacher.nickname %></td>
+          </tr>
+          <tr>
+            <th class="detail-teacher">居住地</th>
+            <td class="detail-value"><%= @lesson.teacher.living_place %></td>
+          </tr>
+          <tr>
+            <th class="detail-teacher">留学経験</th>
+            <td class="detail-value"><%= @lesson.teacher.ryugaku_experience.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-teacher">海外在住歴</th>
+            <td class="detail-value"><%= @lesson.teacher.overseas_residence_history.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-teacher">TOEICやILETSの点数</th>
+            <td class="detail-value"><%= @lesson.teacher.english_test.name %></td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+    <% if teacher_signed_in? && current_teacher.id == @lesson.teacher_id && @lesson.order %>
+      <table class="detail-table-student">
+        <h2 class="profile">
+          購入した生徒のプロフィール
+        </h2>
+        <tbody>
+          <tr>
+            <th class="detail-student">ニックネーム</th>
+            <td class="detail-value"><%= @lesson.order.student.nickname %></td>
+          </tr>
+          <tr>
+            <th class="detail-student">居住地</th>
+            <td class="detail-value"><%= @lesson.order.student_detail.living_place %></td>
+          </tr>
+          <tr>
+            <th class="detail-student">留学経験</th>
+            <td class="detail-value"><%= @lesson.order.student_detail.ryugaku_experience.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-student">海外在住歴</th>
+            <td class="detail-value"><%= @lesson.order.student_detail.overseas_residence_history.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-student">TOEICやILETSの点数</th>
+            <td class="detail-value"><%= @lesson.order.student_detail.english_test.name %></td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+
+    <% if teacher_signed_in? && current_teacher.id == @lesson.teacher_id %>
+      <%= link_to 'レッスンの編集', edit_lesson_path(@lesson.id), method: :get, class: "lesson-red-btn" %>
+      <p class='or-text'>or</p>
+      <%= link_to '削除', lesson_path(@lesson.id), method: :delete, class:'lesson-destroy' %>
+    <% end %>
+
+    <% if student_signed_in? && @lesson.order == nil %>
+      <%= link_to '購入画面に進む', lesson_orders_path(@lesson.id) ,class:"lesson-red-btn"%>
+    <% end %>
+
     <div class="option">
       <div class="favorite-btn">
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
@@ -102,7 +143,7 @@
       </div>
       <div class="report-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な商品の通報</span>
+        <span>不適切なレッスンの通報</span>
       </div>
     </div>
   </div>
@@ -132,7 +173,7 @@
       <% if @teacher_comments %>
         <% @teacher_comments.each do |comment| %>
           <p>
-            <strong><%= link_to comment.teacher.nickname, "/users/#{comment.teacher_id}" %>：</strong>
+            <strong><%= comment.teacher.nickname %>:</strong>
             <%= comment.text %>
           </p>
         <% end %>
@@ -143,7 +184,7 @@
       <% if @student_comments %>
         <% @student_comments.each do |comment| %>
           <p>
-            <strong><%= link_to comment.student.nickname, "/users/#{comment.student_id}" %>：</strong>
+            <strong><% comment.student.nickname %>:</strong>
             <%= comment.text %>
           </p>
         <% end %>
@@ -154,7 +195,7 @@
   <div class="comment-warn">
       不快な言葉遣いなどは利用制限や退会処分となることがありますので、十分注意してください。
       <br>
-      コメントの投稿にはレッスンを出品した講師or生徒として、新規登録/ログインが必要です。
+      コメントの投稿にはレッスンを出品した講師or生徒として、新規登録orログインが必要です。
   </div>
   <div class="links">
     <% if @lesson.id != @lesson_first.id %>
