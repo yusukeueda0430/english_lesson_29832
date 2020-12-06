@@ -17,17 +17,7 @@ class Students::RegistrationsController < Devise::RegistrationsController
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :first_name, :first_hurigana, :last_name, :last_hurigana, :birthday, :phone_number])
   end
-
-  # GET /resource/sign_up
-  # def new
-  #   super
-  # end
-
-  # POST /resource
-  # def create
-  #   super
-  # end
-
+  
   # GET /resource/edit
   # def edit
   #   super

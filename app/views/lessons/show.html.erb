@@ -19,12 +19,12 @@
         <%= @lesson.price %>
       </span>
       <span class="lesson-postage">
-        (税込)
+        円(税込)
       </span>
     </div>
 
     <% if teacher_signed_in? && current_teacher.id == @lesson.teacher_id %>
-      <%= link_to '商品の編集', edit_lesson_path(@lesson.id), method: :get, class: "lesson-red-btn" %>
+      <%= link_to 'レッスンの編集', edit_lesson_path(@lesson.id), method: :get, class: "lesson-red-btn" %>
       <p class='or-text'>or</p>
       <%= link_to '削除', lesson_path(@lesson.id), method: :delete, class:'lesson-destroy' %>
     <% end %>
@@ -34,45 +34,64 @@
     <% end %>
 
     <div class="lesson-explain-box">
-      <span><%= @lesson.details %></span>
+      <h2 class="detail">
+        レッスン詳細説明文
+      </h2>
+      <h2 class="detail-sentence">
+        <%= @lesson.details %>
+      </h2>
     </div>
-    <table class="detail-table">
+    <table class="detail-table-lesson">
+      <h2 class="detail">
+        レッスン詳細一覧表
+      </h2>
+        <tbody>
+          <tr>
+            <th class="detail-lesson">カテゴリー</th>
+            <td class="detail-value"><%= @lesson.category.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-lesson">レッスンの回数</th>
+            <td class="detail-value"><%= @lesson.number_of_times.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-lesson">レッスンを実施する曜日</th>
+            <td class="detail-value"><%= @lesson.what_day %></td>
+          </tr>
+          <tr>
+            <th class="detail-lesson">開始時間</th>
+            <td class="detail-value"><%= @lesson.start_time.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-lesson">終了時間</th>
+            <td class="detail-value"><%= @lesson.end_time.name %></td>
+          </tr>
+        </tbody>
+    </table>
+    <table class="detail-table-teacher">
+      <h2 class="profile">
+        講師のプロフィール
+      </h2>
       <tbody>
         <tr>
-          <th class="detail-lesson">出品者</th>
+          <th class="teacher-detail">ニックネーム</th>
           <td class="detail-value"><%= @lesson.teacher.nickname %></td>
         </tr>
         <tr>
-          <th class="detail-lesson">カテゴリー</th>
-          <td class="detail-value"><%= @lesson.category.name %></td>
+          <th class="teacher-detail">居住地</th>
+          <td class="detail-value"><%= @lesson.teacher.living_place %></td>
         </tr>
         <tr>
-          <th class="detail-lesson">居住地</th>
-          <td class="detail-value"><%= @lesson.living_place %></td>
+          <th class="teacher-detail">留学経験</th>
+          <td class="detail-value"><%= @lesson.teacher.ryugaku_experience.name %></td>
         </tr>
         <tr>
-          <th class="detail-lesson">留学経験</th>
-          <td class="detail-value"><%= @lesson.ryugaku_experience.name %></td>
+          <th class="teacher-detail">海外在住歴</th>
+          <td class="detail-value"><%= @lesson.teacher.overseas_residence_history.name %></td>
         </tr>
         <tr>
-          <th class="detail-lesson">海外在住歴</th>
-          <td class="detail-value"><%= @lesson.overseas_residence_history.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-lesson">レッスンの回数</th>
-          <td class="detail-value"><%= @lesson.number_of_times.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-lesson">レッスンを実施する曜日</th>
-          <td class="detail-value"><%= @lesson.what_day %></td>
-        </tr>
-        <tr>
-          <th class="detail-lesson">開始時間</th>
-          <td class="detail-value"><%= @lesson.start_time.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-lesson">終了時間</th>
-          <td class="detail-value"><%= @lesson.end_time.name %></td>
+          <th class="teacher-detail">TOEICやILETSの点数</th>
+          <td class="detail-value"><%= @lesson.teacher.english_test.name %></td>
         </tr>
       </tbody>
     </table>
@@ -98,7 +117,7 @@
         <span>コメントする<span>
         </button>
       <% end %>
-    <% else student_signed_in? %>
+    <% elsif student_signed_in? %>
       <%= form_with(model: [@lesson, @comment], local: true) do |form| %>
         <%= form.text_area :text, class:"comment", placeholder: "コメントする" %>
         <button type="submit" class="comment-btn">
@@ -133,9 +152,7 @@
   </div>
   
   <div class="comment-warn">
-      相手のことを考え丁寧なコメントを心がけましょう。
-      <br>
-      不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      不快な言葉遣いなどは利用制限や退会処分となることがありますので、十分注意してください。
       <br>
       コメントの投稿にはレッスンを出品した講師or生徒として、新規登録/ログインが必要です。
   </div>

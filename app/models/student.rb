@@ -19,6 +19,6 @@ class Student < ApplicationRecord
          validates :last_name, format: { with: name , message: "漢字、ひらがな、カタカナでお願いします" }
          validates :last_hurigana, format: { with: hurigana , message: "カタカナでお願いします" }
          validates :birthday
-         validates :phone_number, format: { with: phone_number , message: "固定or携帯でお願いします、また固定の場合は市外局番からお願いします"}
+         validates :phone_number, format: { with: phone_number , message: "携帯でお願いします"}
          end
 end

@@ -62,7 +62,7 @@ class LessonsController < ApplicationController
   end
 
   def lesson_params
-    params.require(:lesson).permit(:name, :details, :category_id, :living_place, :ryugaku_experience_id, :overseas_residence_history_id, :number_of_times_id, :what_day, :start_time_id, :end_time_id, :zoom_url, :price, :image).merge(teacher_id: current_teacher.id)
+    params.require(:lesson).permit(:name, :details, :category_id, :number_of_times_id, :what_day, :start_time_id, :end_time_id, :price, :image).merge(teacher_id: current_teacher.id)
   end
 
   def teacher_root_path

@@ -37,14 +37,10 @@ ActiveRecord::Schema.define(version: 2020_11_24_125748) do
     t.string "name", null: false
     t.text "details", null: false
     t.integer "category_id", null: false
-    t.string "living_place", null: false
-    t.integer "ryugaku_experience_id", null: false
-    t.integer "overseas_residence_history_id", null: false
     t.integer "number_of_times_id", null: false
     t.string "what_day", null: false
     t.integer "start_time_id", null: false
     t.integer "end_time_id", null: false
-    t.text "zoom_url", null: false
     t.integer "price", null: false
     t.integer "teacher_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -111,6 +107,11 @@ ActiveRecord::Schema.define(version: 2020_11_24_125748) do
     t.string "last_hurigana", default: "", null: false
     t.date "birthday", null: false
     t.string "phone_number", null: false
+    t.text "zoom_url", null: false
+    t.string "living_place", null: false
+    t.integer "ryugaku_experience_id", null: false
+    t.integer "english_test_id", null: false
+    t.integer "overseas_residence_history_id", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

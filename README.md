@@ -25,7 +25,7 @@ Things you may want to cover:
 
 # アプリケーション名
 
-  english_lesson
+  english-lesson-29832
 
 
 # アプリケーション概要
@@ -79,7 +79,7 @@ https://english-lesson-29832.herokuapp.com/
 
 【表示】
 
-誰でも、出品されているレッスンの出品画像、レッスン名、料金を一覧で見ることができる
+誰でも、出品されているレッスンの出品画像、レッスン名、料金を一覧で見ることができる。
 
 ## レッスン出品機能
 
@@ -89,27 +89,28 @@ https://english-lesson-29832.herokuapp.com/
 
 【表示】
 
-講師のアカウントでログインしていると、画面が表示され、出品画像、レッスン名、レッスンの説明と自己紹介、カテゴリ、居住地、留学経験、海外在住歴、レッスンの回数と曜日と開始時間、終了時間、料金を入力するフォームがある
+講師のアカウントでログインしていると、画面が表示され、出品画像、レッスン名、レッスンの説明と自己紹介、カテゴリ、レッスンの回数と曜日と開始時間、終了時間、料金を入力するフォームがある
 
 ## レッスン詳細機能
 
 【ボタン】
 
-講師のアカウントの場合は、編集ボタンと削除ボタン。生徒のアカウントの場合は購入画面に進むボタン
+出品した講師アカウントの場合は、編集ボタンと削除ボタン、コメントボタン。生徒アカウントの場合は購入画面に進むボタンとコメントボタン。出品していない講師アカウントの場合はボタンなし。
 
 【表示】
 
-誰でも、出品画像、レッスン名、レッスンの説明と自己紹介、カテゴリ、居住地、留学経験、海外在住歴、レッスンの回数と曜日と開始時間、終了時間、料金を見ることができる
+誰でも、レッスン画像、レッスン名、料金、レッスン詳細説明文、カテゴリ、レッスンの回数と曜日と開始時間、終了時間、講師のプロフィールを見ることができる
+生徒(誰でも)と出品した講師の場合、コメントを書くことができる
   
 ## レッスン編集機能
 
 【ボタン】
 
-講師のアカウントでログインしていると、変更するボタンと戻るボタン
+出品した講師のアカウントでログインしていると、変更するボタンと戻るボタン
 
 【表示】
 
-講師のアカウントでログインしていると、画面が表示され、出品画像、レッスン名、レッスンの説明と自己紹介、カテゴリ、居住地、留学経験、海外在住歴、レッスンの回数と曜日と開始時間、終了時間、料金を入力するフォームがある
+講師のアカウントでログインしていると、画面が表示され、出品画像、レッスン名、レッスンの説明、カテゴリ、レッスンの回数と曜日と開始時間、終了時間、料金を入力するフォームがある
   
 ## レッスン購入機能
 
@@ -126,18 +127,23 @@ https://english-lesson-29832.herokuapp.com/
 
 画面なし
 
-講師のアカウントでログインしていると、できる
+出品した講師のアカウントでログインしていると、できる
 
 ## ユーザー管理機能
+
+アカウントの種類は講師アカウントと生徒アカウント
+
 【ボタン】
 
 新規登録画面は新規登録ボタン、ログイン画面はログインボタン
 
 【表示】
 
-新規登録画面は「ニックネーム、メールアドレス、パスワード、名前(全角)、カナ(全角)、生年月日、電話番号」を入力するフォーム
+講師の新規登録画面は「ニックネーム、メールアドレス、パスワード、居住地、留学経験、海外在住歴、zoomのURL、名前(全角)、カナ(全角)、生年月日、電話番号」を入力するフォーム
 
-ログイン画面は「メールアドレス、パスワード」を入力するフォーム
+生徒の新規登録画面は「ニックネーム、メールアドレス、パスワード、名前(全角)、カナ(全角)、生年月日、電話番号」を入力するフォーム
+
+ログイン画面は「メールアドレス、パスワード」を入力するフォームがあり、講師も生徒も共通。
 
 
 # 実装した機能についてのGIFと説明
@@ -154,26 +160,26 @@ https://english-lesson-29832.herokuapp.com/
 
   詳細については誰でも見ることができる
 
-  講師がログインしていれば、編集ページに進んだり、削除したりできる
+  講師がログインしていれば、編集ページに進んだり、削除したり、コメントしたりできる
 
-  生徒がログインしていれば、購入ページに進める
+  生徒がログインしていれば、購入ページに進んだり、コメントしたりできる
 
   ## レッスン編集機能
 
-  講師がログインしていると、出品と同様の画面で編集できる
+  出品した講師がログインしていると、出品と同様の画面で編集できる
 
   ## レッスン購入機能
 
-  生徒がログインしていると、クレジットカードの情報を入力することで、好きなレッスンを購入できる
+  生徒がログインしていると、クレジットカードの情報、回答を入力することで、好きなレッスンを購入できる
   
   購入すると、zoomのURLが表示される
 
   ## レッスン削除機能
 
-  講師がログインしていると、レッスンを削除できる
+  出品した講師がログインしていると、レッスンを削除できる
 
   ## ユーザー管理機能
-　アカウントの種類は講師と生徒
+  アカウントの種類は講師と生徒
 
   アカウントを持っていない方は新規登録ができる
 
@@ -186,9 +192,19 @@ https://english-lesson-29832.herokuapp.com/
 
   レッスン一覧表示機能
 
+  レッスン検索機能
+
+  項目にマウスを重ねた時にメニューが表示される機能
+
   レッスン出品機能
 
-  レッスン詳細機能
+  レッスン詳細表示機能
+
+  講師のプロフィール
+
+  前や後のレッスンに移動できる機能
+  
+  コメント機能
 
   レッスン編集機能
 
@@ -196,7 +212,11 @@ https://english-lesson-29832.herokuapp.com/
 
   レッスン削除機能
 
-  ユーザー管理機能
+  講師と生徒に分けてのユーザー管理機能
+
+  講師と生徒双方のマイページ
+
+  レスポンシブ機能
 
 
 # データベース設計
@@ -221,17 +241,21 @@ https://english-lesson-29832.herokuapp.com/
 
 ## teachers テーブル
 
-| Column         | Type    | Options     |
-| -------------- | ------  | ----------- |
-| email          | string  | null: false |
-| nickname       | string  | null: false |
-| password       | string  | null: false |
-| first_name     | string  | null: false |
-| first_hurigana | string  | null: false |
-| last_name      | string  | null: false |
-| last_hurigana  | string  | null: false |
-| birthday       | date    | null: false |
-| phone_number   | integer | null: false |
+| Column                        | Type    | Options     |
+| ----------------------------- | ------- | ----------- |
+| email                         | string  | null: false |
+| nickname                      | string  | null: false |
+| password                      | string  | null: false |
+| first_name                    | string  | null: false |
+| first_hurigana                | string  | null: false |
+| last_name                     | string  | null: false |
+| last_hurigana                 | string  | null: false |
+| birthday                      | date    | null: false |
+| phone_number                  | integer | null: false |
+| living_place                  | string  | null: false |
+| ryugaku_experience_id         | integer | null: false |
+| english_test_id               | integer | null: false |
+| overseas_residence_history_id | integer | null: false |
 
 ### Association
 
@@ -240,20 +264,17 @@ https://english-lesson-29832.herokuapp.com/
 
 ## lessons テーブル
 
-| Column                        | Type       | Options                     |
-| ----------------------------- | ------- | ------------------------------ |
-| name                          | string  | null: false                    |
-| details                       | text    | null: false                    |
-| category_id                   | integer | null: false                    |
-| living_place                  | string  | null: false                    |
-| ryugaku_experience_id         | integer | null: false                    |
-| overseas_residence_history_id | integer | null: false                    |
-| number_of_times_id            | integer | null: false                    |
-| what_day                      | string  | null: false                    |
-| start_time_id                 | integer | null: false                    |
-| end_time_id                   | integer | null: false                    |
-| price                         | integer | null: false                    |
-| user_id                       | integer | null: false  foreign_key: true |
+| Column             | Type    | Options                     |
+|------------------- | ------- | --------------------------- |
+| name               | string  | null:false                  |
+| details            | text    | null:false                  |
+| category_id        | integer | null:false                  |
+| number_of_times_id | integer | null:false                  |
+| what_day           | string  | null:false                  |
+| start_time_id      | integer | null:false                  |
+| end_time_id        | integer | null:false                  |
+| price              | integer | null:false                  |
+| user_id            | integer | null:false foreign_key:true |
 
 ## Association
 
@@ -277,11 +298,11 @@ https://english-lesson-29832.herokuapp.com/
 
 ## student_details テーブル
 
-| Column                        | Type    | Options                        |
-| ----------------------------- | ------- | ------------------------------ |
-| ryugaku_experience_id         | integer | null: false                    |
-| english_test_id               | integer | null: false                    |
-| order_id                      | integer | null: false, foreign_key: true |
+| Column                | Type    | Options                      |
+| --------------------- | ------- | ---------------------------- |
+| ryugaku_experience_id | integer | null: false                  |
+| english_test_id       | integer | null: false                  |
+| order_id              | integer | null: false,foreign_key:true |
 
 ### Association
 

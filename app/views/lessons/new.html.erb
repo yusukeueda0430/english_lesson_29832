@@ -50,21 +50,6 @@
         </div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"category_id"}) %>
         <div class="weight-bold-text">
-          居住地
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :living_place, class:"lessons-text", id:"living-place", placeholder:"居住地（必須 30文字まで)" %>
-        <div class="weight-bold-text">
-          留学経験
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:ryugaku_experience_id, RyugakuExperience.all , :id, :name, {}, {class:"select-box", id:"ryugaku-experience-id"}) %>
-        <div class="weight-bold-text">
-          海外在住歴
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:overseas_residence_history_id, OverseasResidenceHistory.all, :id, :name, {}, {class:"select-box", id:"overseas-residence-history-id"}) %>
-        <div class="weight-bold-text">
           レッスンの回数
           <span class="indispensable">必須</span>
         </div>
@@ -73,7 +58,7 @@
           レッスンを実施する曜日
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :what_day, class:"lessons-text", id:"what-day", placeholder:"曜日（必須 30文字まで)", maxlength:"30" %>
+        <%= f.text_area :what_day, class:"input-default", id:"what-day", placeholder:"曜日（必須 30文字まで)" %>
         <div class="weight-bold-text">
           開始時間
           <span class="indispensable">必須</span>
@@ -84,11 +69,6 @@
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:end_time_id, EndTime.all, :id, :name, {}, {class:"select-box", id:"end-time-id"}) %>
-        <div class="weight-bold-text">
-          zoomのURL
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :zoom_url, class:"lessons-text", id:"zoom_url", placeholder:"https://zoom.us/j/〜のようにzoomのURLを入力してください（必須 200文字まで)" %>
       </div>
     </div>
     <%# /レッスンの詳細 %>

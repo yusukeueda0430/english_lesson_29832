@@ -22,12 +22,12 @@
 .lesson-box>.name {
   text-align: center;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .lesson-box-img {
   height: 50vh;
-  width: 60vw;
+  width: 50vw;
   min-height: 500px;
   background-color: rgb(205, 202, 202);
   object-fit: contain;
@@ -41,14 +41,23 @@
 }
 
 .lesson-price-box>.lesson-price {
-  font-size: 4vh;
+  font-size: 20px;
   font-weight: bold;
 }
 
-.item-price-box>.lesson-postage {
+.lesson-price-box>.lesson-postage {
   font-size: 16px;
 }
 
+.profile, .detail {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.detail-sentence {
+  text-align: center;
+}
 
 .lesson-red-btn {
   text-align: center;
@@ -78,7 +87,7 @@
   margin: 40px 0px;
 }
 
-.detail-table {
+.detail-table-lesson {
   margin-bottom: 30px;
   width: 100%;
 }
@@ -137,6 +146,24 @@
   margin-right: 5px;
 }
 
+.detail-table-teacher {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.teacher-detail {
+  width: 20%;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+.lesson-box>.name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
 
 /* /レッスンの概要 */
 
@@ -187,7 +214,6 @@
   display: flex;
   justify-content: space-between;
   width: 50vw;
-
 }
 
 .change-lesson-btn {
