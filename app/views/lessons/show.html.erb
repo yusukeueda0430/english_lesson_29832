@@ -184,7 +184,7 @@
       <% if @student_comments %>
         <% @student_comments.each do |comment| %>
           <p>
-            <strong><% comment.student.nickname %>:</strong>
+            <strong><%= comment.student.nickname %>:</strong>
             <%= comment.text %>
           </p>
         <% end %>
