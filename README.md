@@ -46,7 +46,7 @@ https://english-lesson-29832.herokuapp.com/
 
 出品していない講師アカウント
 メールアドレス：test2@com
-パスワード：2222rf
+パスワード：1111rf
 
 生徒アカウント
 メールアドレス：test1@com
