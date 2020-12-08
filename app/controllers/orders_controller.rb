@@ -19,7 +19,8 @@ class OrdersController < ApplicationController
 
   private
   def pay_lesson
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]  # 自身のPAY.JPテスト秘密鍵を記述しましょう
+    # Payjp.api_key = ENV["PAYJP_SECRET_KEY"]  # 自身のPAY.JPテスト秘密鍵を記述しましょう
+    Payjp.api_key = Rails.application.credentials.PAYJP[:PAYJP_SECRET_KEY]
     Payjp::Charge.create(
       amount: @lesson.price,         # 商品の値段
       card: order_params[:token],    # カードトークン
