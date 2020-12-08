@@ -6,6 +6,9 @@ set :application, 'english_lesson_29832'
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:yusukeueda0430/english_lesson_29832.git'
 
+# ブランチを指定する
+set :branch, "main"
+
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
