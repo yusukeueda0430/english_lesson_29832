@@ -42,5 +42,4 @@ class OrdersController < ApplicationController
   def set_order
     @lesson = Lesson.find(params[:lesson_id])
   end
-
 end
