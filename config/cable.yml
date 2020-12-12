@@ -7,5 +7,5 @@ test:
 production:
   adapter: test
   # adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: english_lesson_production
+  # url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  # channel_prefix: english_lesson_production
