@@ -2,8 +2,10 @@ class StudentCommentsController < ApplicationController
   before_action :authenticate_student!
 
   def create
-    comment = StudentComment.create(student_comment_params)
-    redirect_to "/lessons/#{comment.lesson.id}"  
+    comment = StudentComment.new(student_comment_params)
+    if comment.save
+      ActionCable.server.broadcast 'student_comment_channel', content: comment
+    end 
   end
 
   private

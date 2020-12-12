@@ -5,7 +5,9 @@ class TeacherCommentsController < ApplicationController
 
   def create
     comment = TeacherComment.create(teacher_comment_params)
-    redirect_to "/lessons/#{comment.lesson.id}"  
+    if comment.save
+      ActionCable.server.broadcast 'teacher_comment_channel', content: comment
+    end  
   end
 
   private

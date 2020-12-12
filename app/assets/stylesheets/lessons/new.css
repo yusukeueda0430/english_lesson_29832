@@ -89,6 +89,14 @@
   margin-bottom: 15px;
 }
 
+.src{
+    height: 50vh;
+    width: 50vw;
+    min-height: 500px;
+    background-color: rgb(205, 202, 202);
+    object-fit: contain;
+  }
+
 /* /レッスン画像 */
 
 /* レッスン名とレッスン説明 */
