@@ -17,7 +17,6 @@ class Teachers::RegistrationsController < Devise::RegistrationsController
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :first_name, :first_hurigana, :last_name, :last_hurigana, :birthday, :phone_number, :zoom_url, :ryugaku_experience_id, :overseas_residence_history_id, :living_place, :english_test_id])
   end
-
   # GET /resource/edit
   # def edit
   #   super

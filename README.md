@@ -225,17 +225,21 @@ https://english-lesson-29832.herokuapp.com/
 # データベース設計
 ## students テーブル
 
-| Column         | Type    | Options     |
-| -------------- | ------  | ----------- |
-| email          | string  | null: false |
-| nickname       | string  | null: false |
-| password       | string  | null: false |
-| first_name     | string  | null: false |
-| first_hurigana | string  | null: false |
-| last_name      | string  | null: false |
-| last_hurigana  | string  | null: false |
-| birthday       | date    | null: false |
-| phone_number   | integer | null: false |
+| Column                        | Type    | Options     |
+| ----------------------------- | ------  | ----------- |
+| email                         | string  | null: false |
+| nickname                      | string  | null: false |
+| password                      | string  | null: false |
+| first_name                    | string  | null: false |
+| first_hurigana                | string  | null: false |
+| last_name                     | string  | null: false |
+| last_hurigana                 | string  | null: false |
+| birthday                      | date    | null: false |
+| phone_number                  | integer | null: false |
+| ryugaku_experience_id         | integer | null: false |
+| english_test_id               | integer | null: false |
+| living_place                  | string  | null: false |
+| overseas_residence_history_id | integer | null: false |
 
 ### Association
 
@@ -255,6 +259,7 @@ https://english-lesson-29832.herokuapp.com/
 | last_hurigana                 | string  | null: false |
 | birthday                      | date    | null: false |
 | phone_number                  | integer | null: false |
+| zoom_url                      | text    | null: false |
 | living_place                  | string  | null: false |
 | ryugaku_experience_id         | integer | null: false |
 | english_test_id               | integer | null: false |
@@ -301,13 +306,12 @@ https://english-lesson-29832.herokuapp.com/
 
 ## student_details テーブル
 
-| Column                        | Type    | Options                      |
-| ----------------------------- | ------- | ---------------------------- |
-| ryugaku_experience_id         | integer | null: false                  |
-| english_test_id               | integer | null: false                  |
-| living_place                  | string  | null: false                  |
-| overseas_residence_history_id | integer | null: false                  |
-| order_id                      | integer | null: false,foreign_key:true |
+| Column           | Type    | Options                      |
+| ---------------- | ------- | ---------------------------- |
+| lebel_id         | integer | null: false                  |
+| reach_id         | integer | null: false                  |
+| talking_speed_id | integer | null: false                  |
+| order_id         | integer | null: false,foreign_key:true |
 
 ### Association
 
