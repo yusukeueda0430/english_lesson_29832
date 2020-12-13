@@ -28,7 +28,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order_student_detail).permit(:ryugaku_experience_id ,:english_test_id, :living_place, :overseas_residence_history_id).merge(student_id: current_student.id, lesson_id:params[:lesson_id], token:params[:token])
+    params.require(:order_student_detail).permit(:lebel_id ,:reach_id, :talking_speed_id).merge(student_id: current_student.id, lesson_id:params[:lesson_id], token:params[:token])
   end
 
   def kounyuu_root_path

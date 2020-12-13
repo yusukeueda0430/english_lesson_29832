@@ -82,33 +82,25 @@
       </h1>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">居住地</label>
+          <label class="form-text">講師が話すスピードは？</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :living_place, class:"input-default", id:"living-place", placeholder:"居住地（必須 30文字まで)" %>
+        <%= f.collection_select(:talking_speed_id, TalkingSpeed.all, :id, :name, {}, {class:"select-box", id:"talking_speed_id"}) %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">留学経験</label>
+          <label class="form-text">目指すレベルは？</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:ryugaku_experience_id, RyugakuExperience.all, :id, :name, {}, {class:"select-box", id:"ryugaku_experience_id"}) %>
+        <%= f.collection_select(:lebel_id, Lebel.all, :id, :name, {}, {class:"select-box", id:"lebel_id"}) %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">TOEICやILETSの点数</label>
+          <label class="form-text">そのレベルにいつまでに到達したいですか？</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:english_test_id, EnglishTest.all, :id, :name, {}, {class:"select-box", id:"english_test_id"}) %>
+        <%= f.collection_select(:reach_id, Reach.all, :id, :name, {}, {class:"select-box", id:"reach_id"}) %>
       </div>
-      <div class="form-group">
-        <div class='form-text-wrap'>
-          <label class="form-text">海外在住歴</label>
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:overseas_residence_history_id, OverseasResidenceHistory.all, :id, :name, {}, {class:"select-box", id:"overseas-residence-history-id"}) %>
-      </div>
-
     </div>
     <%# /回答の入力 %>
     <div class='buy-btn'>

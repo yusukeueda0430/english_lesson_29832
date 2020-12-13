@@ -74,29 +74,25 @@
 
 /* レッスン画像 */
 .img-upload {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding: 2vh 0;
 }
 
 .click-upload {
-  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
   min-width: 250px;
 }
 
-.click-upload>p {
+.click-upload-left>p {
   margin-bottom: 15px;
 }
 
-.src{
-    height: 50vh;
-    width: 50vw;
-    min-height: 500px;
-    background-color: rgb(205, 202, 202);
-    object-fit: contain;
+.preview {
+    height: 150px;
+    width: 150px;
+    margin-top: 30px;
   }
-
 /* /レッスン画像 */
 
 /* レッスン名とレッスン説明 */

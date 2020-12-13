@@ -63,10 +63,9 @@ ActiveRecord::Schema.define(version: 2020_11_24_125748) do
   end
 
   create_table "student_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "ryugaku_experience_id", null: false
-    t.integer "english_test_id", null: false
-    t.string "living_place", null: false
-    t.integer "overseas_residence_history_id", null: false
+    t.integer "lebel_id", null: false
+    t.integer "reach_id", null: false
+    t.integer "talking_speed_id", null: false
     t.integer "order_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -82,6 +81,10 @@ ActiveRecord::Schema.define(version: 2020_11_24_125748) do
     t.string "last_hurigana", default: "", null: false
     t.date "birthday", null: false
     t.string "phone_number", null: false
+    t.integer "ryugaku_experience_id", null: false
+    t.integer "english_test_id", null: false
+    t.string "living_place", null: false
+    t.integer "overseas_residence_history_id", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

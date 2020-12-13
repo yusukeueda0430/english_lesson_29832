@@ -23,15 +23,6 @@
       </span>
     </div>
 
-    <%# <% if teacher_signed_in? && current_teacher.id == @lesson.teacher_id %>
-      <%# <%= link_to 'レッスンの編集', edit_lesson_path(@lesson.id), method: :get, class: "lesson-red-btn" %>
-      <%# <p class='or-text'>or</p>  %>
-      <%# <%= link_to '削除', lesson_path(@lesson.id), method: :delete, class:'lesson-destroy' %>
-    <%# <% end %>
-
-    <%# <% if student_signed_in? && @lesson.order == nil %>
-      <%# <%= link_to '購入画面に進む', lesson_orders_path(@lesson.id) ,class:"lesson-red-btn"%>
-    <%# <% end %>
     <div class="lesson-explain-box">
       <h2 class="detail">
         レッスン詳細説明文
@@ -108,19 +99,38 @@
           </tr>
           <tr>
             <th class="detail-student">居住地</th>
-            <td class="detail-value"><%= @lesson.order.student_detail.living_place %></td>
+            <td class="detail-value"><%= @lesson.order.student.living_place %></td>
           </tr>
           <tr>
             <th class="detail-student">留学経験</th>
-            <td class="detail-value"><%= @lesson.order.student_detail.ryugaku_experience.name %></td>
+            <td class="detail-value"><%= @lesson.order.student.ryugaku_experience.name %></td>
           </tr>
           <tr>
             <th class="detail-student">海外在住歴</th>
-            <td class="detail-value"><%= @lesson.order.student_detail.overseas_residence_history.name %></td>
+            <td class="detail-value"><%= @lesson.order.student.overseas_residence_history.name %></td>
           </tr>
           <tr>
             <th class="detail-student">TOEICやILETSの点数</th>
-            <td class="detail-value"><%= @lesson.order.student_detail.english_test.name %></td>
+            <td class="detail-value"><%= @lesson.order.student.english_test.name %></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="detail-table-student">
+        <h2 class="request">
+          購入した生徒の要望
+        </h2>
+        <tbody>
+          <tr>
+            <th class="detail-student">講師が話すスピード</th>
+            <td class="detail-value"><%= @lesson.order.student_detail.talking_speed.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-student">目指すレベル</th>
+            <td class="detail-value"><%= @lesson.order.student_detail.lebel.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-student">そのレベルにいつまでに到達したいか</th>
+            <td class="detail-value"><%= @lesson.order.student_detail.reach.name %></td>
           </tr>
         </tbody>
       </table>
@@ -133,7 +143,7 @@
     <% end %>
 
     <% if student_signed_in? && @lesson.order == nil %>
-      <%= link_to '購入画面に進む', lesson_orders_path(@lesson.id) ,class:"lesson-red-btn"%>
+      <%= link_to '購入画面に進む', lesson_orders_path(@lesson.id), class:"lesson-red-btn"%>
     <% end %>
 
     <div class="option">
